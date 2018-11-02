@@ -13,6 +13,11 @@ package:
   - bref.php
   - 'src/**'
   - 'vendor/**'
+  # Below are Symfony-specific files and directories
+  - composer.json # Symfony uses it to figure out the root directory
+  - 'bin/**'
+  - 'config/**'
+  - 'var/cache/prod/**' # We want to deploy the production caches
 
 functions:
   # By default we create one "main" function
@@ -22,3 +27,7 @@ functions:
     events:
     - http: 'ANY /'
     - http: 'ANY {proxy+}'
+    # Symfony configuration using environment variables:
+    environment:
+      APP_ENV: 'prod'
+      APP_DEBUG: '0'
