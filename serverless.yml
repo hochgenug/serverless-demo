@@ -7,12 +7,12 @@ provider:
 
 package:
   exclude:
-    - '*'
-    - '**'
+  - '*'
+  - '**'
   include:
-    - bref.php
-    - 'src/**'
-    - 'vendor/**'
+  - bref.php
+  - 'src/**'
+  - 'vendor/**'
 
 functions:
   # By default we create one "main" function
@@ -20,5 +20,5 @@ functions:
     handler: handler.handle
     timeout: 20
     events:
-      - http: 'ANY /'
-      - http: 'ANY {proxy+}'
+    - http: 'ANY /'
+    - http: 'ANY {proxy+}'
